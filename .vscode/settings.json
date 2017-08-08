@@ -8,5 +8,6 @@
   "eslint.workingDirectories": [
     "./"
   ],
-  "files.eol": "\n"
+  "files.eol": "\n",
+  "tslint.configFile": "./tslint.json"
 }
