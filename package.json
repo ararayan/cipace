@@ -1,17 +1,28 @@
 {
-  "name": "kendo",
+  "name": "cipace",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "ararayan",
+  "license": "MIT",
   "dependencies": {
     "jquery": "^3.2.1"
   },
   "devDependencies": {
-    "webpack": "^3.0.0"
-  }
+    "eslint": "^4.4.1",
+    "ts-loader": "^2.3.2",
+    "webpack": "^3.0.0",
+    "webpack-merge": "^4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ararayan/cipace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ararayan/cipace/issues"
+  },
+  "homepage": "https://github.com/ararayan/cipace#readme",
+  "description": ""
 }
