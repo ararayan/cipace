@@ -1,0 +1,19 @@
+{
+  "name": "cipace",
+  "version": "1.0.0",
+  "description": "play ground for test tools and code",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ararayan/test.git"
+  },
+  "author": "ararayan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ararayan/test/issues"
+  },
+  "homepage": "https://github.com/ararayan/test#readme"
+}
