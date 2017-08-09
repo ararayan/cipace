@@ -1,0 +1,3 @@
+# eslint will auto ignore node_modules, bower_components, build folder
+
+dist/
