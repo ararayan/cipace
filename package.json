@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/ararayan/test/issues"
   },
-  "homepage": "https://github.com/ararayan/test#readme"
+  "homepage": "https://github.com/ararayan/test#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^8.0.20",
+    "@types/webpack": "^3.0.6",
+    "eslint": "^4.4.1",
+    "webpack": "^3.5.2"
+  }
 }
