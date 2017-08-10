@@ -4,7 +4,8 @@
   "description": "play ground for test tools and code",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "dev": "webpack --config config/webpack.base.config.ts"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/ararayan/test/issues"
   },
-  "homepage": "https://github.com/ararayan/test#readme"
+  "homepage": "https://github.com/ararayan/test#readme",
+  "devDependencies": {
+    "@types/node": "^8.0.20",
+    "@types/webpack": "^3.0.7",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.6.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.4.2",
+    "webpack": "^3.5.2"
+  }
 }
