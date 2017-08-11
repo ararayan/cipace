@@ -1,5 +1,4 @@
-import A from './test/a';
-import B from './test/b';
+import {A} from './test/a';
 
 class YY {
   public saf = new A();

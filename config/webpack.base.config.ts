@@ -5,16 +5,16 @@ declare var __dirname: string;
 console.log('ficl');
 const resolvePath: (path: string) => string = (pathRelateRoot) => {
 
-  const currFolderPath = '../';
+  const currFolderPath = './';
   console.log(path.resolve(currFolderPath, pathRelateRoot));
   return path.resolve(currFolderPath, pathRelateRoot);
 };
 
 const config: webpack.Configuration = {
-  entry: 'src/index.ts',
+  entry: resolvePath('src/index.ts'),
   output: {
     path: resolvePath('dist'),
-    filename: 'fuck[name][chunkhash].js'
+    filename: 'fuck[name][chunkhash:4].js'
   },
   module: {
     rules: [
@@ -36,22 +36,25 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.ts?$/,
-        loader: 'ts-loader'
+        loader: 'ts-loader',
+        options: {
+          configFileName: './tsconfig.es2015.json',
+        }
       }
     ]
-  }
-  // resolve: {
-  //   // options for resolving module requests
-  //   // (does not apply to resolving to loaders)
+  },
+  resolve: {
+    // options for resolving module requests
+    // (does not apply to resolving to loaders)
 
-  //   // directories where to look for modules
-  //   modules: [
-  //     'node_modules',
-  //     resolvePath('src')
-  //   ],
-  //   // extensions that are used
-  //   extensions: ['.ts', '.js', '.vue']
-  // }
+    // directories where to look for modules
+    // modules: [
+    //   resolvePath('node_modules'),
+    //   resolvePath('src')
+    // ],
+    // extensions that are used
+    extensions: ['.ts', '.js', '.vue']
+  }
 };
 
 export default config;
