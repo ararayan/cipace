@@ -2,11 +2,9 @@
 import * as webpack from 'webpack';
 import * as path from 'path';
 declare var __dirname: string;
-console.log('ficl');
-const resolvePath: (path: string) => string = (pathRelateRoot) => {
 
+const resolvePath: (path: string) => string = (pathRelateRoot) => {
   const currFolderPath = './';
-  console.log(path.resolve(currFolderPath, pathRelateRoot));
   return path.resolve(currFolderPath, pathRelateRoot);
 };
 
@@ -14,7 +12,7 @@ const config: webpack.Configuration = {
   entry: resolvePath('src/index.ts'),
   output: {
     path: resolvePath('dist'),
-    filename: 'fuck[name][chunkhash:4].js'
+    filename: 'test[name][chunkhash:4].js'
   },
   module: {
     rules: [
@@ -38,7 +36,7 @@ const config: webpack.Configuration = {
         test: /\.ts?$/,
         loader: 'ts-loader',
         options: {
-          configFileName: './tsconfig.es2015.json',
+          configFileName: './tsconfig.es2015.json'
         }
       }
     ]
