@@ -14,6 +14,9 @@ const config: webpack.Configuration = {
     path: resolvePath('dist'),
     filename: 'test[name][chunkhash:4].js'
   },
+  stats: {
+    warnings: false
+  },
   module: {
     rules: [
       {
@@ -23,12 +26,11 @@ const config: webpack.Configuration = {
         options: {
           configFile: resolvePath('tslint.json'),
           failOnHint: false,
-          tsConfigFile: resolvePath('tsconfig.json'),
+          tsConfigFile: resolvePath('tsconfig.es2015.json'),
           // name of your formatter (optional)
           // formatter: 'yourformatter',
           fileOutput: {
-            dir: resolvePath('report/tslint/'),
-            ext: 'html'
+            dir: resolvePath('report/tslint/')
           }
         }
       },
