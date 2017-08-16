@@ -3,11 +3,10 @@ import * as webpack from 'webpack';
 
 
 
-declare namespace BabiliPlugin {
-  class Ctor {
-    new(a?: any, b?: any): any;
-    apply(compiler: webpack.Compiler): void;
-  }
+interface BabiliPlugin extends webpack.Plugin {
+    new (): BabiliPlugin;
 }
 
-export = BabiliPlugin;
+declare const BabiliPlugin: BabiliPlugin
+export = BabiliPlugin
+

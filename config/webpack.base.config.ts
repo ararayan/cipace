@@ -5,7 +5,6 @@ import * as webpack from 'webpack';
 import * as path from 'path';
 declare var __dirname: string;
 
-console.dir(BabiliPlugin);
 const resolvePath: (path: string) => string = (pathRelateRoot) => {
   const currFolderPath = './';
   return path.resolve(currFolderPath, pathRelateRoot);
@@ -59,7 +58,7 @@ const config: webpack.Configuration = {
     extensions: ['.ts', '.js', '.vue']
   },
   plugins: [
-    new BabiliPlugin.Ctor()
+    new BabiliPlugin()
   ]
 };
 
