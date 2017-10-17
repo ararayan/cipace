@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "dev": "cross-env process.env.TS_NODE_PROJECT=config webpack --config config/webpack.base.config.ts",
-    "prod": "cross-env process.env.TS_NODE_PROJECT=config webpack -p --config config/webpack.base.config.ts"
+    "dev": "webpack --config config/webpack.base.config",
+    "prod": "webpack -p --config config/webpack.base.config"
   },
   "repository": {
     "type": "git",

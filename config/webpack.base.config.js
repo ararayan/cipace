@@ -1,16 +1,15 @@
 // https://webpack.js.org/configuration/
-import * as webpack from 'webpack';
-import * as path from 'path';
-import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
+const webpack = require('webpack');
+const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const uglifyEsPlugin = require('uglifyjs-webpack-plugin');
 
-declare var __dirname: string;
-
-const resolvePath: (path: string) => string = (pathRelateRoot) => {
+const resolvePath = (pathRelateRoot) => {
   const currFolderPath = './';
   return path.resolve(currFolderPath, pathRelateRoot);
 };
 
-const config: webpack.Configuration = {
+const config = {
   entry: resolvePath('src/index.ts'),
   output: {
     path: resolvePath('dist'),
@@ -57,7 +56,31 @@ const config: webpack.Configuration = {
     // extensions that are used
     extensions: ['.ts', '.js', '.vue']
   },
-  plugins: [new BundleAnalyzerPlugin({
+  plugins: [
+    new uglifyEsPlugin({
+      uglifyOptions: {
+        ecma: 5,
+        mangle: false,
+        output: {
+          beautify: true,
+          preserve_line: true,
+          comments: true,
+        },
+        compress: {
+          collapse_vars: false,
+          conditionals: false,
+          drop_console: false,
+          drop_debugger: false,
+          evaluate: true,
+          hoist_funs: false,
+          if_return: false,
+          inline: false,
+          keep_fargs: true,
+          loops: true,
+        }
+      }
+    }),
+    new BundleAnalyzerPlugin({
     // Can be `server`, `static` or `disabled`.
     // In `server` mode analyzer will start HTTP server to show bundle report.
     // In `static` mode single HTML file with bundle report will be generated.
@@ -90,4 +113,4 @@ const config: webpack.Configuration = {
   })]
 };
 
-export default config;
+module.exports = config;
